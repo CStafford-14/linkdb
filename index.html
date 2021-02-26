@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cesium Short Interface</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&display=swap');
+
+            h1, html, body, div, button {
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+
+            h1 {
+                font-family: 'Righteous', cursive;
+                font-size: 6vh;
+                line-height: 0;
+                color: white;
+            }
+
+            p, h3, a {
+                font-family: 'Roboto', sans-serif;
+                font-size: 3vh;
+                color: white;
+            }
+            .collapsible {
+color: rgb(255, 255, 255);
+cursor: pointer;
+padding: 18px;
+width: 100%;
+border: solid;
+text-align: left;
+outline: none;
+font-size: 15px;
+cursor: pointer;
+-webkit-transition-duration: 0.4s;
+transition-duration: 0.4s;
+margin-bottom: 2vh;
+border-radius: 15px;
+background-color: rgba(0,0,0,0);
+}
+
+.active, .collapsible:hover {
+  background-color: rgba(20, 20, 20, 0.26);
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+   color: rgb(255, 255, 255);
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+   margin-bottom: 0.5vh;
+}
+body {
+    height: 100vh;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(128deg, rgb(0, 0, 0) 0%, rgb(39, 39, 39) 100%); 
+}
+        </style>
+    </head>
+    <body>
+        <div style="padding: 10px; padding-top: 25px;">
+        <h1>Cesium Short Links Interface</h1>
+        <h3>Welcome to the Cesium Short Links Interface! This is a basic page with links I've created so that I don't have to use a link shortener. The moajority of pages here are on the Cesium domain (cesium.gq), but there may be some external links to other sites such as the Horizons Forums, documents, etc.</h3>
+        <button class="collapsible">Cesium</button>
+        <div class="content" style=""><p>There are no links in "Cesium" at this time.</p></div>
+        <button class="collapsible">Horizons</button>
+        <div class="content" style=""><p>There are no links in "Horizons" at this time.</p></div>
+        <button class="collapsible">Miscellaneous</button>
+        <div class="content" style=""><p>There are no links in "Miscellaneous" at this time.</p></div></div>
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                  content.style.maxHeight = null;
+                } else {
+                  content.style.maxHeight = content.scrollHeight + "px";
+                } 
+              });
+            }
+            </script>
+    </body>
+</html>
