@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Redirecting you to Cesium</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: black;
+                overflow: hidden;
+            }
+            h3 {
+                font-family: 'Roboto', sans-serif;
+                font-size: 5vh;
+                color: white;
+            }
+
+            p {
+                font-family: 'Roboto', sans-serif;
+                font-size: 2vh;
+                color: rgb(75, 75, 75);
+            }
+
+            div {
+                display: grid;
+                justify-items: center;
+                padding-bottom: 40px;
+            }
+
+            img {
+                width: 25vh;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h3>Taking you to Cesium...</h3>
+            <img src="load.png">
+            <p>If you don't automatically get redirected within 5 seconds, click <a href="https://www.cesium.gq">here</a>.</p>
+        </div>
+        <script>
+            function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+window.onload = async function() {
+        await sleep(5000);
+        window.location.replace("https://www.cesium.gq");
+}
+        </script>
+    </body>
